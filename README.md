@@ -152,10 +152,12 @@ Now we've added in the definitive pieces of a working Redux app. Next, we will a
 > in `src/components/Shelf.js`:
 
 ```js
-import React, { Component } from 'react'
+import React, {
+  Component
+} from 'react'
 
 class Shelf extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
       shelfItems: [
@@ -168,26 +170,24 @@ class Shelf extends Component {
   }
 
   render() {
-    const shelfItems = this.state.shelfItems.map( (item, id) => {
+    const shelfItems = this.state.shelfItems.map((item, id) => {
       return (
-        <li key={id}>
-          {item}
-          <button onClick={() => this.props.addItem(item)}>+</button>
+        <li key={ id }> 
+          { item } 
+          <button onClick = { () => this.props.addItem(item)}> + </button> 
         </li>
       )
     })
     return (
       <div>
-        <h2>Store Inventory</h2>
-        <ul>
-            {shelfItems}
-        </ul>
+        <h2>Store Inventory</h2> 
+        <ul>{shelfItems}</ul> 
       </div>
     )
   }
 }
 
-export default Shelf
+export default Shelf`
 ```
 
 ## Adding a Container Component
